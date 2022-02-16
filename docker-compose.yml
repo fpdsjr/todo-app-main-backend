@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  fjrdb:
+    image: postgres
+    environment:
+      POSTGRES_USER: "flavio"
+      POSTGRES_PASSWORD: "junior"
+      POSTGRES_DB: "todoApp"
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdataTodo:/data/postgres
+
+volumes:
+  pgdataTodo:
+    driver: local
