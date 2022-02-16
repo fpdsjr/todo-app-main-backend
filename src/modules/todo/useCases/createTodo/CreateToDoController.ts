@@ -3,7 +3,6 @@ import { CreateToDoUseCase } from "./CreateToDoUseCase";
 
 
 
-
 export class CreateToDoController {
   async handle(request: Request, response: Response) {
     const { description, active } = request.body
