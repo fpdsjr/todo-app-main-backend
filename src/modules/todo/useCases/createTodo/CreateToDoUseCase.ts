@@ -11,7 +11,7 @@ export class CreateToDoUseCase {
     const createToDo = await prisma.todo.create({
       data: {
         description,
-        active
+        active 
       }
     });
 

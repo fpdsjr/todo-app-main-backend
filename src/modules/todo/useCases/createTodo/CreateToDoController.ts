@@ -14,6 +14,6 @@ export class CreateToDoController {
       active
     })
 
-    return response.status(200).json(todo);
+    return response.json(todo);
   }
 }
