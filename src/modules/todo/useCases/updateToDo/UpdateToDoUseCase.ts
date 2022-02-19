@@ -6,14 +6,18 @@ interface IUpdateToDoUseCase {
 
 export class UpdateToDoUseCase {
   async execute({ id }: IUpdateToDoUseCase) {
-    const boolean = true;
+    const getActive = await prisma.todo.findFirst({
+      where: {
+        id,
+      },
+    });
 
     const updateToDo = await prisma.todo.update({
       where: {
         id,
       },
       data: {
-        active: !boolean,
+        active: !getActive?.active,
       },
     });
 
