@@ -1,22 +1,22 @@
-import { prisma } from "../../../../database/prismaClient"
-
+import { prisma } from "../../../../database/prismaClient";
 
 interface IUpdateToDoUseCase {
-  id: string
+  id: string;
 }
-
 
 export class UpdateToDoUseCase {
   async execute({ id }: IUpdateToDoUseCase) {
+    const boolean = true;
+
     const updateToDo = await prisma.todo.update({
       where: {
         id,
       },
       data: {
-        active: false
-      }
-    })
-    
+        active: !boolean,
+      },
+    });
+
     return updateToDo;
   }
 }
